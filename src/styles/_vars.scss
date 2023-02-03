@@ -1,0 +1,7 @@
+@use 'sass:math';
+
+$gutter: 1.5rem;
+$halfGutter: math.div($gutter, 2);
+$color1: rgb(41, 92, 160);
+$color2: rgba(137, 181, 240, 0.5);
+$color3: rgba(202, 222, 248, 0.5);
