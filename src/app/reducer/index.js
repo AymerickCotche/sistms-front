@@ -1,9 +1,9 @@
 import { combineReducers } from '@reduxjs/toolkit';
 import { HYDRATE } from 'next-redux-wrapper';
-import stakingReducer from './staking';
+import productReducer from './product';
 
 const rootReducer = combineReducers({
-  staking: stakingReducer
+  product: productReducer
 });
 
 const reducer = (state, action) => {
