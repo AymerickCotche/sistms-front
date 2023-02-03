@@ -1,0 +1,7 @@
+@use '../../styles/vars';
+
+.footer {
+  padding: vars.$halfGutter;
+  background: vars.$color2;
+  box-shadow: inset 0 10px 7px -10px #FFF;
+}

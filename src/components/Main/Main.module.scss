@@ -1,0 +1,39 @@
+@use '../../styles/vars';
+
+.main {
+  width: 70%;
+  height: 100%;
+  margin: auto;
+  padding: vars.$gutter 0;
+
+  &__title {
+    font-size: 1.7em;
+    margin-bottom: vars.$gutter;
+  }
+
+  &__filter {
+    margin-bottom: vars.$gutter;
+    &__btn {
+      border-radius: 20px;
+      padding: 0.5em 1em;
+      margin-right: 1em;
+      &__cinqs {
+        border: 1px solid #1AAE71;
+        color: #1AAE71;
+        background-color: #146345;
+      }
+      &__oned {
+        border: 1px solid #E2AE03;
+        color: #E2AE03;
+        background-color: #7B640C;
+
+      }
+      &__threem {
+        border: 1px solid #EF5634;
+        color: #EF5634;
+        background-color: #743123;
+
+      }
+    }
+  }
+}
