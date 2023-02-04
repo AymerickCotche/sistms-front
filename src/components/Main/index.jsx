@@ -2,7 +2,8 @@ import styles from './Main.module.scss';
 import { useDispatch, useSelector } from 'react-redux';
 import { useEffect } from 'react';
 
-import { findAllProducts } from '@/app/actions/product';
+import { findAllProducts } from '@/redux/actions/product';
+import Cards from '../Cards';
 
 const Main = () => {
 
@@ -14,8 +15,8 @@ const Main = () => {
   return (
 
     <div className={styles.main}>
-      <h2 className={styles.main__title}>Stake your token to receive passive income</h2>
-      hello
+      <h2 className={styles.main__title}>Tout les stocks null</h2>
+      <Cards/>
     </div>
   )
 };

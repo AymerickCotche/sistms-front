@@ -1,0 +1,10 @@
+@use '../../styles/vars';
+
+.cards {
+
+  background-color: blue;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  overflow: hidden;
+}

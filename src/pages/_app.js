@@ -1,5 +1,5 @@
 
-import { wrapper } from '../app/store';
+import { wrapper } from '../redux/store';
 import '../styles/globals.scss';
 
 function MyApp({ Component, pageProps }) {

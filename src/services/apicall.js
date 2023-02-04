@@ -14,7 +14,8 @@ import http from "../http-common";
 
 const getAllProducts = async (data) => {
   try {
-    const response = await http.post('/', data);
+    const response = await http.post('http://localhost:8282/proxy', data);
+
     return response;
   } catch (error) {
     console.log(error);
