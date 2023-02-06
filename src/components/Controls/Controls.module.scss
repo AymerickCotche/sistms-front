@@ -1,0 +1,37 @@
+@use '../../styles/vars';
+
+.controls {
+  display: flex;
+  flex-direction: column;
+
+  &__title {
+    font-weight: bold;
+    margin-bottom: 1em;
+    text-align: center;
+    font-size: 1.2em;
+  }
+
+  &__btns {
+    display: flex;
+    justify-content: space-between;
+    &__btn {
+      border: white 1px solid;
+      border-radius: 5%;
+      padding: 0.5em;
+      margin-left: 2em;
+      &__asc {
+        background-color: green;
+      }
+      &__desc {
+        background-color: rgba(177, 34, 34, 0.808);
+      }
+    }
+
+    &__btn:hover {
+      cursor: pointer;
+      background-color: rgba(0, 0, 255, 0.315);
+    }
+  }
+
+  
+}

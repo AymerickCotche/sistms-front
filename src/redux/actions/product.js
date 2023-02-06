@@ -6,7 +6,7 @@ import crypto from 'crypto';
 import oauth1a from'oauth-1.0a';
 const Sellsy = require("node-sellsy").default;
 
-export const findAllProducts = createAsyncThunk('product/findAllProducts', async ({request, io_mode, do_in}) => {
+export const findAllProducts = createAsyncThunk('product/findAllProducts', async () => {
   try {
       const sellsy = new Sellsy({
         creds: {
@@ -15,7 +15,7 @@ export const findAllProducts = createAsyncThunk('product/findAllProducts', async
         userToken: process.env.NEXT_PUBLIC_ACCESS_TOKEN,
         userSecret: process.env.NEXT_PUBLIC_TOKEN_SECRET,
       },
-      endPoint: "http://localhost:8282"
+      endPoint: process.env.NEXT_PUBLIC_PROXY_URL
     });
 
     const params = {
@@ -35,17 +35,9 @@ export const findAllProducts = createAsyncThunk('product/findAllProducts', async
   } catch (error) {
     console.log("error:", error);
   }
- 
-  
-  // await sellsy
-  //   .api({
-  //     method: "Catalogue.getList",
-  //     params: params,
-  //   })
-  //   .then((data) => {
-  //     return data;
-  //   })
-  //   .catch((e) => {
-  //     console.log("error:", e);
-  //   });
 });
+
+export const setDisplayedProducts = createAction('product/setDisplayedProducts');
+export const setIsLoading = createAction('product/setIsLoading');
+export const setSortingSetting = createAction('product/setSortingSetting');
+export const setSortingDirection = createAction('product/setSortingDirection');

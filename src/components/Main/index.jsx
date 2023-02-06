@@ -2,21 +2,39 @@ import styles from './Main.module.scss';
 import { useDispatch, useSelector } from 'react-redux';
 import { useEffect } from 'react';
 
-import { findAllProducts } from '@/redux/actions/product';
+import { findAllProducts, setDisplayedProducts, setIsLoading } from '@/redux/actions/product';
 import Cards from '../Cards';
 
 const Main = () => {
 
   const dispatch = useDispatch();
 
+  const { products } = useSelector((state) => state.product);
+  const { isLoading } = useSelector((state) => state.product);
+
   useEffect(() => {
-    dispatch(findAllProducts({request: 1, io_mode: 'json', do_in: '{"method":"Catalogue.getList","params":{"type":"item","search":{"tags":"null"}}}'}))
-  }, [])
+    
+    dispatch(setIsLoading(true));
+    dispatch(findAllProducts());
+    dispatch(setIsLoading(false));
+
+  }, []);
+
+  useEffect(() => {
+
+    const displayedProducts = Object.keys(products).map(key => products[key]);
+    const formatedDisplayedProduct = displayedProducts.map((product) => ({ ...product, formatted_stockItemAvailableQt: parseFloat(product.formatted_stockItemAvailableQt.replace(',','.').replace(' ',''))}));
+    dispatch(setDisplayedProducts(formatedDisplayedProduct));
+
+  }, [products]);
+
   return (
 
     <div className={styles.main}>
       <h2 className={styles.main__title}>Tout les stocks null</h2>
-      <Cards/>
+      {isLoading ?
+        <p>Chargement en cours veuillez patienter</p>
+      : <Cards/>}
     </div>
   )
 };

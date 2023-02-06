@@ -24,5 +24,8 @@
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "sass": "^1.58.0"
+  },
+  "devDependencies": {
+    "mini-css-extract-plugin": "^2.7.2"
   }
 }
