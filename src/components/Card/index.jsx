@@ -17,9 +17,8 @@ const Card = ({product}) => {
         <div>Image</div>
       </div>
       <div className={styles.card__desc}>
-        <p className={styles.card__desc__type}>quantité disponible: {product.formatted_stockItemAvailableQt}</p>
-        <p className={styles.card__desc__apr}>prix TTC : {product.prices['174972'].amount}</p>
-        <p className={styles.card__desc__balance}>infos2</p>
+        <p className={styles.card__desc__item}>Quantité disponible: {product.formatted_stockItemAvailableQt}</p>
+        <p className={styles.card__desc__item}>Prix TTC : {product.prices['174972'].amount}</p>
       </div>
       
     </div>
