@@ -88,11 +88,6 @@ const Controls = ({product}) => {
         >
           Prix
         </p>
-        <p
-          className={styles.controls__btns__btn}
-        >
-          Btn 4
-        </p>
       </div>
 
       
