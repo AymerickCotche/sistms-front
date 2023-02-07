@@ -23,6 +23,9 @@ export const findAllProducts = createAsyncThunk('product/findAllProducts', async
       search: {
         tags: "null",
       },
+      pagination: {
+        nbperpage: "200"
+      }
     };
 
     const data = await sellsy.api({
