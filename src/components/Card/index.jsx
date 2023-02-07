@@ -12,13 +12,27 @@ const Card = ({product}) => {
 
   return(
     <div className={styles.card}>
-      <h3 className={styles.card__title}>{product.tradename}</h3>
       <div className={styles.card__img}>
-        <div>Image</div>
+        {product.customfields[5].stringval ? 
+          <Image
+            src={product.customfields[5].stringval}
+            alt={`image ${product.name}`}
+            fill
+          />
+          :
+          <p className={styles.card__img__error}>Image non disponible</p>
+        }
       </div>
-      <div className={styles.card__desc}>
-        <p className={styles.card__desc__item}>Quantité disponible: {product.formatted_stockItemAvailableQt}</p>
-        <p className={styles.card__desc__item}>Prix TTC : {product.prices['174972'].amount}</p>
+      <div className={styles.card__text}>
+        <h3 className={styles.card__text__title}>{product.name}</h3>
+        <h3 className={styles.card__text__title}>{product.tradename}</h3>
+        <div className={styles.card__text__desc}>
+          <p className={styles.card__text__desc__item}>Quantité disponible: {product.formatted_stockItemAvailableQt}</p>
+          <p className={styles.card__text__desc__item}>Prix TTC : {product.prices['174972'].amount}</p>
+          <p className={styles.card__text__desc__item}>Catégorie : {product.categoryName}</p>
+
+
+        </div>
       </div>
       
     </div>

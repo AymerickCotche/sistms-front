@@ -31,7 +31,7 @@ const Main = () => {
   return (
 
     <div className={styles.main}>
-      <h2 className={styles.main__title}>Tout les stocks null</h2>
+      <h2 className={styles.main__title}>Produits stock null</h2>
       {isLoading ?
         <p>Chargement en cours veuillez patienter</p>
       : <Cards/>}

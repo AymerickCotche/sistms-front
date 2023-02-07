@@ -4,6 +4,9 @@ const nextConfig = {
   experimental: {
     appDir: true,
   },
+  images: {
+    domains: ['diamond-eu-prod.s3.amazonaws.com'],
+  },
 }
 
 module.exports = nextConfig
