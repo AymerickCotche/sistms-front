@@ -68,7 +68,7 @@ const Controls = ({product}) => {
 
   return(
     <div className={styles.controls}>
-      <h3 className={styles.controls__title}>Contrôles de trie</h3>
+      <h3 className={styles.controls__title}>Trier les articles par :</h3>
       <div className={styles.controls__btns}>
         <p
           className={sortingSetting !== 'name' ? styles.controls__btns__btn : sortingDirection !== 'asc' ? `${styles.controls__btns__btn} ${styles.controls__btns__btn__desc}` : `${styles.controls__btns__btn} ${styles.controls__btns__btn__asc}`}
