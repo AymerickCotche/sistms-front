@@ -50,22 +50,31 @@ const Main = () => {
   }, [searchInput]);
 
   useEffect(() => {
-
+      
       const displayedProducts = Object.keys(products).map(key => products[key]);
       const formatedDisplayedProduct = displayedProducts.map((product) => {
-        return { ...product,
-          formatted_stockItemAvailableQt: parseFloat(product.formatted_stockItemAvailableQt.replace(',','.').replace(' ','')),
-          prices: {
-            ...product.prices,
-            174972: {
-              ...product.prices['174972'],
-              formatted_amount:  parseFloat(product.prices['174972'].formatted_amount.replace(',','.').replace(' ','')).toFixed(2)
+        // if(product.prices['174972'].amountTaxesFree  ) {
+
+          return { ...product,
+            formatted_stockItemAvailableQt: parseFloat(product.formatted_stockItemAvailableQt.replace(',','.').replace(' ','')),
+            prices: {
+              ...product.prices,
+              174972: {
+                ...product.prices['174972'],
+                formatted_amount:  parseFloat(product.prices['174972'].formatted_amount.replace(',','.').replace(' ','')).toFixed(2)
+              }
             }
           }
-        }
+        // }
       });
-      dispatch(setAllProducts(formatedDisplayedProduct));
-      dispatch(setDisplayedProducts(formatedDisplayedProduct));
+      const tempData = []
+      formatedDisplayedProduct.forEach((product, index) => {
+        if(product.prices['174972'].amountTaxesFree > 100) {
+          tempData.push(product);
+        }
+      })
+      dispatch(setAllProducts(tempData));
+      dispatch(setDisplayedProducts(tempData));
       // console.log(formatedDisplayedProduct.length)
 
   }, [products]);
