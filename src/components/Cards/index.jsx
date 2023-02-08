@@ -4,11 +4,13 @@ import Image from 'next/image';
 
 import styles from './Cards.module.scss';
 import Card from '../Card';
+import { setDisplayedProducts } from '@/redux/actions/product';
 
 
 const Cards = () => {
 
-  const { displayedProducts } = useSelector((state) => state.product)
+  const { displayedProducts } = useSelector((state) => state.product);
+  const { allProducts } = useSelector((state) => state.product);
   const dispatch = useDispatch();
 
   const cardsJsx = displayedProducts.map(product => <Card key={product.id} product={product}/>)

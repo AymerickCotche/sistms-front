@@ -2,15 +2,21 @@
 
 .cards {
 
-  display: flex;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, 350px);
+  grid-gap: 50px;
   justify-content: space-between;
-  flex-wrap: wrap;
   overflow: hidden;
+  &::after {
+    content: '';
+    flex: auto;
+  }
 }
 
 @media screen and (max-width: 640px) {
   .cards {
     justify-content: center;
     padding: 0 1em 0 1em;
+    grid-gap: 10px;
   }
 }

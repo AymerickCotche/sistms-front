@@ -1,0 +1,36 @@
+@use '../../styles/vars';
+
+.category {
+  display: flex;
+  flex-direction: column;
+  
+  &__title {
+    
+    font-weight: bold;
+    margin-bottom: 1em;
+    text-align: center;
+    font-size: 1.2em;
+  }
+
+  &__select {
+    background-color: rgba(255, 255, 255, 0);
+    border: white 1px solid;
+    border-radius: 15px;
+    padding: 1em;
+    color: white;
+    &__option {
+      background-color: blue;
+    }
+  }
+
+ 
+}
+
+@media screen and (max-width: 640px) {
+  .category {
+    align-self: auto;
+    margin-bottom: 0.2em;
+    width: 100%;
+  }
+  
+}

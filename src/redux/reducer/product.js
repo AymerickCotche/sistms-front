@@ -1,14 +1,18 @@
 import { createReducer } from '@reduxjs/toolkit';
 
-import { findAllProducts, setDisplayedProducts, setIsLoading, setSortingSetting, setSortingDirection } from '../actions/product';
+import { findAllProducts, setDisplayedProducts, setIsLoading, setSortingSetting, setSortingDirection, setSearchInput, setAllProducts, setCategory, setCategories } from '../actions/product';
 
 const initialState = {
   products: {},
   displayedProducts: [],
+  allProducts: [],
   isLoading: false,
   sortingSetting: 'default',
   sortingDirection: 0,
   message: '',
+  searchInput: '',
+  category: '',
+  categories: []
 };
 
 export const productReducer = createReducer(initialState, (builder) => {
@@ -36,6 +40,18 @@ export const productReducer = createReducer(initialState, (builder) => {
   })
   .addCase(setSortingDirection, (state, action) => {
     state.sortingDirection = action.payload;
+  })
+  .addCase(setSearchInput, (state, action) => {
+    state.searchInput = action.payload;
+  })
+  .addCase(setAllProducts, (state, action) => {
+    state.allProducts = action.payload;
+  })
+  .addCase(setCategory, (state, action) => {
+    state.category = action.payload;
+  })
+  .addCase(setCategories, (state, action) => {
+    state.categories = action.payload;
   })
   
 });

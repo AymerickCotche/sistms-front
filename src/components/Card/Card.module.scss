@@ -3,9 +3,8 @@
 .card {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  background: rgba(0, 0, 255, 0.295);
-  border-radius: 5px;
+  background: vars.$color3;
+  border-radius: 25px;
   -webkit-box-shadow: inset 1px 1px 5px #fff;
   box-shadow: inset 1px 1px 5px #fff;
   border: 1px solid rgba(0,0,0,.2);
@@ -14,9 +13,8 @@
   height: 600px;
   overflow: hidden;
 
-
   &__img {
-    background-color: rgba(128, 128, 128, 0.46);
+    background-color: rgb(128, 128, 128);
     width: 100%;
     height: 350px;
     position: relative;
@@ -27,7 +25,7 @@
   }
 
   &__text {
-    padding: vars.$gutter;
+    padding: vars.$halfGutter;
     &__desc {
       height: 100%;
       display: flex;
@@ -36,14 +34,20 @@
       
       &__item {
         margin-bottom: 1em;
+        &:last-child {
+          margin-bottom: 0;
+        }
       }
     }
     
     &__title {
       font-size: 1.2em;
       font-weight: bold;
-      margin-bottom: 0.5em;
-      align-self: center;
+      margin-bottom: 1em;
+
+      &__ref {
+        color: rgb(109, 109, 109);
+      }
     }
   }
 }

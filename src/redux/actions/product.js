@@ -41,6 +41,10 @@ export const findAllProducts = createAsyncThunk('product/findAllProducts', async
 });
 
 export const setDisplayedProducts = createAction('product/setDisplayedProducts');
+export const setAllProducts = createAction('product/setAllProducts');
 export const setIsLoading = createAction('product/setIsLoading');
 export const setSortingSetting = createAction('product/setSortingSetting');
 export const setSortingDirection = createAction('product/setSortingDirection');
+export const setSearchInput = createAction('product/setSearchInput');
+export const setCategory = createAction('product/setCategory');
+export const setCategories = createAction('product/setCategories');
