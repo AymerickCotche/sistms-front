@@ -13,10 +13,9 @@ const Main = () => {
   const { isLoading } = useSelector((state) => state.product);
 
   useEffect(() => {
-    
-    dispatch(setIsLoading(true));
+
     dispatch(findAllProducts());
-    dispatch(setIsLoading(false));
+
 
   }, []);
 
@@ -31,10 +30,16 @@ const Main = () => {
   return (
 
     <div className={styles.main}>
+      
       <h2 className={styles.main__title}>Produits stock null</h2>
-      {isLoading ?
+
+      {isLoading &&
         <p>Chargement en cours veuillez patienter</p>
-      : <Cards/>}
+      }
+
+      {!isLoading &&
+         <Cards/>
+      }
     </div>
   )
 };

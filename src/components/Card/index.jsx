@@ -1,3 +1,4 @@
+import _ from 'lodash';
 import { useDispatch, useSelector } from 'react-redux';
 import { useEffect } from 'react';
 import Image from 'next/image';
@@ -9,13 +10,23 @@ const Card = ({product}) => {
 
   const dispatch = useDispatch();
 
+  
+  const findImageUrlField = () => {
+    if( _.has(product, 'customfields')) {
+      for(const field in product.customfields) {
+        if(product.customfields[field].code === 'imageproduit') {
+          return product.customfields[field].stringval;
+        }
+      }
+    }
+  }
 
   return(
     <div className={styles.card}>
       <div className={styles.card__img}>
-        {product.customfields[5].stringval ? 
+        {findImageUrlField() ? 
           <Image
-            src={product.customfields[5].stringval}
+            src={findImageUrlField()}
             alt={`image ${product.name}`}
             fill
           />

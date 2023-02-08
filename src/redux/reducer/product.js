@@ -7,7 +7,8 @@ const initialState = {
   displayedProducts: [],
   isLoading: false,
   sortingSetting: 'default',
-  sortingDirection: 0
+  sortingDirection: 0,
+  message: '',
 };
 
 export const productReducer = createReducer(initialState, (builder) => {
@@ -15,9 +16,10 @@ export const productReducer = createReducer(initialState, (builder) => {
   .addCase(findAllProducts.fulfilled, (state, action) => {
 
     state.products = action.payload;
+    state.isLoading = false;
   })
   .addCase(findAllProducts.pending, (state, action) => {
-    state.message = action.payload;
+    state.isLoading = true;
   })
   .addCase(findAllProducts.rejected, (state, action) => {
     state.message = action.payload;
@@ -26,6 +28,7 @@ export const productReducer = createReducer(initialState, (builder) => {
     state.displayedProducts = action.payload;
   })
   .addCase(setIsLoading, (state, action) => {
+    console.log(action)
     state.isLoading = action.payload;
   })
   .addCase(setSortingSetting, (state, action) => {
