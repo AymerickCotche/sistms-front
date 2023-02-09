@@ -34,7 +34,7 @@ const Category = () => {
 
   }, [allProducts]);
 
-  const categoriesToDisplay = categories.map((category) => <option value={category} className={styles.category__select__option}>{category}</option>)
+  const categoriesToDisplay = categories.map((category, index) => <option value={category} className={styles.category__select__option} key={index}>{category}</option>)
 
   return(
     <div className={styles.category}>
