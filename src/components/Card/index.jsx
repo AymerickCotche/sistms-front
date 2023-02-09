@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { useEffect } from 'react';
 import Image from 'next/image';
 
-import items from '../../data/imagedata.json'
+import items from '../../data/imagedata.json';
 import styles from './Card.module.scss';
 
 
@@ -76,7 +76,7 @@ const Card = ({product}) => {
         <h3 className={styles.card__text__title}>{product.tradename}</h3>
         <div className={styles.card__text__desc}>
           <p className={styles.card__text__desc__item}>Prix remisé : {getPromoPrice(product.prices['174972'].amountTaxesFree)} €</p>
-          <p className={styles.card__text__desc__item}>Quantité disponible: {product.formatted_stockItemAvailableQt}</p>
+          <p className={styles.card__text__desc__item}>Quantité disponible : {product.formatted_stockItemAvailableQt}</p>
           <p className={styles.card__text__desc__item}>Prix HT : {product.prices['174972'].formatted_amountTaxesFree}</p>
           <p className={styles.card__text__desc__item}>Fournisseur : {findSupplierField()}</p>
           <p className={styles.card__text__desc__item}>Catégorie : {product.categoryName}</p>
