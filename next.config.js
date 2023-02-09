@@ -5,7 +5,7 @@ const nextConfig = {
     appDir: true,
   },
   images: {
-    domains: ['diamond-eu-prod.s3.amazonaws.com'],
+    domains: ['diamond-eu-prod.s3.amazonaws.com', 'static.materiel-horeca.com', 'www.restoconcept.com', 'www.stock-direct-chr.com', 'polibox.com', '©www.restoconcept.com', 'www.stockresto.com', 'www.rollergrill-international.com'],
     remotePatterns: [
       {
         protocol: 'https',

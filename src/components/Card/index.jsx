@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { useEffect } from 'react';
 import Image from 'next/image';
 
+import items from '../../data/imagedata.json'
 import styles from './Card.module.scss';
 
 
@@ -15,7 +16,34 @@ const Card = ({product}) => {
     if( _.has(product, 'customfields')) {
       for(const field in product.customfields) {
         if(product.customfields[field].code === 'imageproduit') {
+          if(product.customfields[field].stringval ===  "") {
+            if(product.name.includes('_2022')) {
+              const item = items.find((item) => item.ref.includes(product.name.replace('_2022', '')));
+              if(item && item.Image !== "") {
+                return item.Image;
+              } else {
+              }
+            } else {
+              const item = items.find((item) => item.ref.includes(product.name));
+              if(item && item.Image !== "") {
+                return item.Image;
+              } else {
+              } 
+            }
+            
+            
+          }
           return product.customfields[field].stringval;
+        }
+      }
+    }
+  }
+
+  const findSupplierField = () => {
+    if( _.has(product, 'customfields')) {
+      for(const field in product.customfields) {
+        if(product.customfields[field].code === 'marque') {
+          return product.customfields[field].textval;
         }
       }
     }
@@ -47,9 +75,10 @@ const Card = ({product}) => {
         <h3 className={`${styles.card__text__title} ${styles.card__text__title__ref}`}>{product.name}</h3>
         <h3 className={styles.card__text__title}>{product.tradename}</h3>
         <div className={styles.card__text__desc}>
-          <p className={styles.card__text__desc__item}>Prix Remise : {getPromoPrice(product.prices['174972'].amountTaxesFree)}</p>
+          <p className={styles.card__text__desc__item}>Prix remisé : {getPromoPrice(product.prices['174972'].amountTaxesFree)} €</p>
           <p className={styles.card__text__desc__item}>Quantité disponible: {product.formatted_stockItemAvailableQt}</p>
           <p className={styles.card__text__desc__item}>Prix HT : {product.prices['174972'].formatted_amountTaxesFree}</p>
+          <p className={styles.card__text__desc__item}>Fournisseur : {findSupplierField()}</p>
           <p className={styles.card__text__desc__item}>Catégorie : {product.categoryName}</p>
 
 
