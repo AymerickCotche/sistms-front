@@ -2,9 +2,8 @@
 
 .cards {
 
-  display: grid;
-  grid-template-columns: repeat(auto-fill, 350px);
-  grid-gap: 50px;
+  display: flex;
+  flex-wrap: wrap;
   justify-content: space-between;
   overflow: hidden;
   &::after {
@@ -13,10 +12,10 @@
   }
 }
 
+
 @media screen and (max-width: 640px) {
   .cards {
     justify-content: center;
     padding: 0 1em 0 1em;
-    grid-gap: 10px;
   }
 }

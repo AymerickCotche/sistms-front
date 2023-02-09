@@ -7,7 +7,7 @@
 }
 
 .header {
-  width: 70%;
+  width: 90%;
   margin: auto;
   display: flex;
   justify-content: space-between;
@@ -35,6 +35,7 @@
     font-size: 5em;
     font-weight: bold;
     align-self: flex-end;
+    flex: 1;
   }
 }
 

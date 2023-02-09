@@ -6,7 +6,8 @@
   padding: 0.9em;
   border-radius: 15px;
   background-color: rgba(0, 0, 255, 0);
-  width: 25%;
+  flex:1;
+  margin: 0 2em;
 
   &__input {
     border: none;
