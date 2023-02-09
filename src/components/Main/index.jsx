@@ -5,6 +5,8 @@ import { useEffect } from 'react';
 
 import { findAllProducts, setAllProducts, setDisplayedProducts, setIsLoading } from '@/redux/actions/product';
 import Cards from '../Cards';
+import Cardlist from '../Cardlist';
+import Liste from '../Liste';
 
 const Main = () => {
 
@@ -15,6 +17,7 @@ const Main = () => {
   const { allProducts } = useSelector((state) => state.product);
   const { searchInput } = useSelector((state) => state.product);
   const { category } = useSelector((state) => state.product);
+  const { viewMode } = useSelector((state) => state.product);
 
   useEffect(() => {
 
@@ -89,8 +92,12 @@ const Main = () => {
         <p>Chargement en cours veuillez patienter</p>
       }
 
-      {!isLoading &&
+      {!isLoading && viewMode==='cards'&&
          <Cards/>
+      }
+
+      {!isLoading && viewMode==='list'&&
+         <Liste/>
       }
     </div>
   )

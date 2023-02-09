@@ -48,3 +48,4 @@ export const setSortingDirection = createAction('product/setSortingDirection');
 export const setSearchInput = createAction('product/setSearchInput');
 export const setCategory = createAction('product/setCategory');
 export const setCategories = createAction('product/setCategories');
+export const setViewMode = createAction('product/setViewMode');

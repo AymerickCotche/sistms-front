@@ -1,6 +1,6 @@
 import { createReducer } from '@reduxjs/toolkit';
 
-import { findAllProducts, setDisplayedProducts, setIsLoading, setSortingSetting, setSortingDirection, setSearchInput, setAllProducts, setCategory, setCategories } from '../actions/product';
+import { findAllProducts, setDisplayedProducts, setIsLoading, setSortingSetting, setSortingDirection, setSearchInput, setAllProducts, setCategory, setCategories, setViewMode } from '../actions/product';
 
 const initialState = {
   products: {},
@@ -12,7 +12,8 @@ const initialState = {
   message: '',
   searchInput: '',
   category: '',
-  categories: []
+  categories: [],
+  viewMode: 'cards'
 };
 
 export const productReducer = createReducer(initialState, (builder) => {
@@ -52,6 +53,9 @@ export const productReducer = createReducer(initialState, (builder) => {
   })
   .addCase(setCategories, (state, action) => {
     state.categories = action.payload;
+  })
+  .addCase(setViewMode, (state, action) => {
+    state.viewMode = action.payload;
   })
   
 });

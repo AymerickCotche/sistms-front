@@ -1,0 +1,62 @@
+@use '../../styles/vars';
+
+.card {
+  display: flex;
+  background: vars.$color4;
+  -webkit-box-shadow: inset 1px 1px 5px #fff;
+  box-shadow: inset 1px 1px 5px #fff;
+  border: 1px solid rgba(0,0,0,.2);
+  height: 200px;
+
+  &__img {
+    background-color: rgb(128, 128, 128);
+    width: 200px;
+    height: 100%;
+    position: relative;
+    &__error {
+      text-align: center;
+      margin-top: 20%;
+    }
+  }
+
+  &__text {
+    padding: vars.$halfGutter;
+    &__desc {
+      max-height: 100%;
+      display: flex;
+      align-items: center;
+      
+      &__item {
+        margin-bottom: 1em;
+        &:last-child {
+          margin-bottom: 0;
+        }
+        &__container {
+          margin-left: 2em;
+        }
+      }
+    }
+    
+    &__title {
+      font-size: 1.2em;
+      font-weight: bold;
+      margin-bottom: 1em;
+
+      &__ref {
+        text-align: center;
+        color: rgb(255, 136, 0);
+        font-size: 1.3em;
+      }
+    }
+  }
+}
+@media screen and (max-width: 1280px) {
+  .card {
+  }
+}
+
+@media screen and (max-width: 640px) {
+  .card {
+    width: 100%;
+  }
+}

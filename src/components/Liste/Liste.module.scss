@@ -1,0 +1,15 @@
+@use '../../styles/vars';
+
+.cards {
+  display: flex;
+  flex-direction: column;
+  
+}
+
+
+@media screen and (max-width: 640px) {
+  .cards {
+    justify-content: center;
+    padding: 0 1em 0 1em;
+  }
+}

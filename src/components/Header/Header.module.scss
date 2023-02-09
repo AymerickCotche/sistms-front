@@ -7,7 +7,7 @@
 }
 
 .header {
-  width: 90%;
+  width: 100%;
   margin: auto;
   display: flex;
   justify-content: space-between;
@@ -15,16 +15,6 @@
   &__claim:hover {
     color: blue;
     cursor: pointer;
-  }
-  &__btn {
-    color: white;
-    padding: vars.$gutter 2*vars.$gutter;
-    background: vars.$color3;
-    border: 1px solid rgba(0,0,0,.2);
-    border-radius: 5px;
-    -webkit-box-shadow: inset 1px 1px 5px #fff;
-    box-shadow: inset 1px 1px 5px #fff;
-    font-size: 1.3em;
   }
   &__title:hover {
     color:blue;
@@ -35,7 +25,20 @@
     font-size: 5em;
     font-weight: bold;
     align-self: flex-end;
-    flex: 1;
+    flex: 3;
+  }
+}
+@media screen and (max-width: 1280px) {
+  .header__container {
+    padding: 0.5em;
+    
+  }
+  .header {
+    width: 85%;
+    &__title {
+      align-self: center;
+      font-size: 4em;
+    }
   }
 }
 
