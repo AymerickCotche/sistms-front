@@ -71,12 +71,15 @@
 @media screen and (max-width: 640px) {
   .controls {
     margin-left: 0;
+    justify-content: space-evenly;
+    width: 100%;
     &__title {
       margin-bottom: 0.2em;
     }
     &__btns {
       display: flex;
       justify-content: space-between;
+      flex-direction: row;
       &__btn {
         
         margin-left: 0;
