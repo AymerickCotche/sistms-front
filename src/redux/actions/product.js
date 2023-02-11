@@ -18,6 +18,7 @@ export const findAllProducts = createAsyncThunk('product/findAllProducts', async
       endPoint: process.env.NEXT_PUBLIC_PROXY_URL
     });
 
+    
     const params = {
       type: "item",
       search: {
